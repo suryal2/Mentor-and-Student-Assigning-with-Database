@@ -17,10 +17,11 @@ const DB_URL =process.env.DB_URL;
 app.use(bodyParser.json()); // For parsing JSON bodies
 
 //connect to MongoDB
+console.log("DB_URL:", DB_URL);
 mongoose
-  .connect(DB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+  .connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.log("Could not connect to MongoDB", err));
+  .catch((err) => console.error("Could not connect to MongoDB", err));
 
 // CREATE Mentor
 app.post("/mentor", async (req, res) => {
