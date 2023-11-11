@@ -12,7 +12,7 @@ mongoose.set('strictQuery', false);
 
 const app = express();
 const PORT = process.env.PORT;
-const DB_URi ='mongodb+srv://Surya:Guvi2023@bw3tamil.gy8v7rd.mongodb.net/?retryWrites=true&w=majority';
+const DB_URi =process.env.DB_URI;
 
 app.use(bodyParser.json()); // For parsing JSON bodies
 
