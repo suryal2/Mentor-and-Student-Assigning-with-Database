@@ -12,14 +12,14 @@ mongoose.set('strictQuery', false);
 
 const app = express();
 const PORT = process.env.PORT;
-const DB_URi =process.env.DB_URI;
+const DB_URL ='mongodb+srv://Surya:Guvi2023@bw3tamil.gy8v7rd.mongodb.net/?retryWrites=true&w=majority';
 
 app.use(bodyParser.json()); // For parsing JSON bodies
 
 //connect to MongoDB
  
 mongoose
-  .connect(DB_URi, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Could not connect to MongoDB", err));
 
