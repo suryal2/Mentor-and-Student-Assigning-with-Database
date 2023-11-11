@@ -7,6 +7,8 @@ require("dotenv").config();
 //Importing the models
 const Mentor = require("./models/Mentor");
 const Student = require("./models/Student");
+mongoose.set('strictQuery', false);
+
 
 const app = express();
 const PORT = process.env.PORT;
@@ -16,7 +18,7 @@ app.use(bodyParser.json()); // For parsing JSON bodies
 
 //connect to MongoDB
 mongoose
-  .connect(DB_URL, {})
+  .connect(DB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("Could not connect to MongoDB", err));
 
