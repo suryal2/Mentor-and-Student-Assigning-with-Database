@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
-require("dotenv").config();
+require('dotenv').config();
 
 //Importing the models
 const Mentor = require("./models/Mentor");
@@ -12,14 +12,14 @@ mongoose.set('strictQuery', false);
 
 const app = express();
 const PORT = process.env.PORT;
-const DB_URL =process.env.DB_URL;
+const DB_URi ='mongodb+srv://Surya:Guvi2023@bw3tamil.gy8v7rd.mongodb.net/?retryWrites=true&w=majority';
 
 app.use(bodyParser.json()); // For parsing JSON bodies
 
 //connect to MongoDB
-console.log("DB_URL:", DB_URL);
+ 
 mongoose
-  .connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(DB_URi, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Could not connect to MongoDB", err));
 
